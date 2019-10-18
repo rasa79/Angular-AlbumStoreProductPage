@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, ResponseType  } from '@angular/http';
+import { Http, Response  } from '@angular/http';
 
 
 @Injectable()
