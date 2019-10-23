@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response  } from '@angular/http';
 // tslint:disable-next-line: import-spacing
 import  'rxjs/add/operator/map' ;
-import './album';
+import { Album } from './album';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -12,9 +12,9 @@ export class ProductService {
 
   constructor(private _http: Http) { }
 
-  getAlbum(id: number):Observable<Album> {
-    return <Album> this._http.get(this._albumUrl)
-                      .map(response => <Album> response.json);
+  getAlbum(id: number): Observable<Album> {
+    return this._http.get(this._albumUrl)
+                      .map(response =>   response.json.as(Observable<Album>));
   }
 
 }
