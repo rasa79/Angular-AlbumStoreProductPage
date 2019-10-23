@@ -1,4 +1,5 @@
 {
     "editor.fontFamily": "CascadiaCode, 'Courier New', monospace",
-    "editor.fontWeight": "200"
+    "editor.fontWeight": "200",
+    "files.autoSave": "afterDelay"
 }
