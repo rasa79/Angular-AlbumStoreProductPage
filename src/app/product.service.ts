@@ -11,6 +11,7 @@ export class ProductService {
   private _albumUrl = "../assets/album.json";
   private _productsUrl='../assets/products.json';
   public album: Album;
+  products: Product[];
 
   constructor(private _http: Http) {}
 
@@ -18,7 +19,7 @@ export class ProductService {
     return this._http.get(this._albumUrl).map(response => (this.album = <Album> response.json()));
   }
 
-  getProducts(): Observable<Product[]>{
-    return this._http.get(this._productsUrl).map(response => <Product[]> response.json());
+  getProducts(): Observable<Product[]> {
+    return this._http.get(this._productsUrl).map(response => this.products = response.json());
   }
 }
